@@ -100,7 +100,7 @@ describe("Map with one object", () => {
 })
 
 describe("Map with one object and different separator", () => {
-    const arrayStringMap = new ArrayStringMap<TwoNumberArray, number>();
+    const arrayStringMap = new ArrayStringMap<TwoNumberArray, number>(":");
     arrayStringMap.set(sampleArray1, sampleValue1);
     it("Map uses proper encoding underneath", () => {
         // @ts-ignore - this is a test, and we need to make sure the underlying item
