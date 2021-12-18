@@ -35,7 +35,10 @@ export default class ArrayStringMap<K extends any[], V> implements Map<K, V> {
     }
 
     delete(key: K): boolean {
-        return false;
+        const encoded = this.encodeArray(key)
+        const retval  = this._map.delete(encoded)
+        this._converterInfo.delete(encoded);
+        return retval;
     }
 
     * entries(): IterableIterator<[K, V]> {
