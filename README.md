@@ -1,5 +1,5 @@
 # array-string-map
-A map that encodes all array items into a string format, so that arrays work like tuples in Python when used for a map.
+A Map that internally encodes Arrays to strings so that two Arrays with the same elements will return the same item.
 
 ## Motivation
 

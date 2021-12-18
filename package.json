@@ -1,0 +1,19 @@
+{
+  "name": "array-string-map",
+  "version": "0.0.1",
+  "description": "A Map that internally encodes Arrays to strings so that two Arrays with the same elements will return the same item.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PythonCoderAS/array-string-map.git"
+  },
+  "keywords": ["array", "string", "map"],
+  "author": "",
+  "license": "GNU General Public License v3.0",
+  "bugs": {
+    "url": "https://github.com/PythonCoderAS/array-string-map/issues"
+  },
+  "homepage": "https://github.com/PythonCoderAS/array-string-map#readme"
+}
