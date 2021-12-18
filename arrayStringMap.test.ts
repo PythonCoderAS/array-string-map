@@ -1,5 +1,5 @@
 import { assert } from "chai"
-import ArrayStringMap from "./arrayStringMap.js"
+import ArrayStringMap from "./arrayStringMap"
 
 type TwoNumberArray = [number, number]
 
