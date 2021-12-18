@@ -9,11 +9,18 @@
     "type": "git",
     "url": "git+https://github.com/PythonCoderAS/array-string-map.git"
   },
-  "keywords": ["array", "string", "map"],
+  "keywords": [
+    "array",
+    "string",
+    "map"
+  ],
   "author": "",
   "license": "GNU General Public License v3.0",
   "bugs": {
     "url": "https://github.com/PythonCoderAS/array-string-map/issues"
   },
-  "homepage": "https://github.com/PythonCoderAS/array-string-map#readme"
+  "homepage": "https://github.com/PythonCoderAS/array-string-map#readme",
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
 }
