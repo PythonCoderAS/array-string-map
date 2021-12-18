@@ -51,11 +51,9 @@ export default class ArrayStringMap<K extends any[], V> implements Map<K, V> {
     }
 
     forEach(callbackfn: (value: V, key: K, map: ArrayStringMap<K, V>) => void, thisArg?: any): void {
-        this._converterInfo.forEach((value, key) => {
-            // TypeScript complains that this will be undefined, but the items in
-            // `this._converterInfo` and `this._map` will always be defined in each other.
-            return callbackfn(this._map.get(key)!, value, thisArg);
-        });
+        for (const [key, value] of this.entries()) {
+            callbackfn.call(thisArg, value, key, this);
+        }
     }
 
     get(key: K): V | undefined {
