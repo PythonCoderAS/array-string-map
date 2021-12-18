@@ -1,3 +1,4 @@
 .github
 tsconfig.json
 arrayStringMap.ts
+*.test.*
