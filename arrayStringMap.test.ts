@@ -49,53 +49,53 @@ describe("Map with one object", () => {
         assert(arrayStringMap.has(sampleArray1));
     })
     it ("Map entries returns array with one object", () => {
-        assert([...arrayStringMap.entries()].length === 1);
-        assert([...arrayStringMap.entries()][0][0] === sampleArray1);
-        assert([...arrayStringMap.entries()][0][1] === sampleValue1);
+        assert([...arrayStringMap.entries()].length === 1, "Array length is 1");
+        assert([...arrayStringMap.entries()][0][0] === sampleArray1, "Array is sampleArray1");
+        assert([...arrayStringMap.entries()][0][1] === sampleValue1, "Value is sampleValue1");
     })
     it ("Map keys returns array with one object", () => {
-        assert([...arrayStringMap.keys()].length === 1);
-        assert([...arrayStringMap.keys()][0] === sampleArray1);
+        assert([...arrayStringMap.keys()].length === 1, "Array length is 1");
+        assert([...arrayStringMap.keys()][0] === sampleArray1, "Array is sampleArray1");
     })
     it ("Map values returns array with one value", () => {
-        assert([...arrayStringMap.values()].length === 1);
-        assert([...arrayStringMap.values()][0] === sampleValue1);
+        assert([...arrayStringMap.values()].length === 1, "Array length is 1");
+        assert([...arrayStringMap.values()][0] === sampleValue1, "Value is sampleValue1");
     })
     it("Map uses proper separator underneath", () => {
         // @ts-ignore - this is a test, and we need to make sure the underlying map
         // works as expected
-        assert([...arrayStringMap._map.keys()][0].includes("\u200b"));
+        assert([...arrayStringMap._map.keys()][0].includes("\u200b"), "Separator is present");
         // @ts-ignore - this is a test, and we need to make sure the underlying encoding map
         // works as expected
-        assert([...arrayStringMap._converterInfo.values()][0] === sampleArray1);
+        assert([...arrayStringMap._converterInfo.values()][0] === sampleArray1, "Converter info is sampleArray1");
     })
     it ("Clearing map removes object", () => {
         const copiedMap = copyArrayStringMap(arrayStringMap);
         copiedMap.clear();
-        assert(copiedMap.size === 0);
-        assert(copiedMap.get(sampleArray1) === undefined);
-        assert(!copiedMap.has(sampleArray1));
-        assert([...copiedMap.entries()].length === 0);
+        assert(copiedMap.size === 0, "Map size is 0");
+        assert(copiedMap.get(sampleArray1) === undefined, "Map get returns undefined");
+        assert(!copiedMap.has(sampleArray1), "Map has returns false");
+        assert([...copiedMap.entries()].length === 0, "Map entries returns empty array");
         // @ts-ignore - this is a test, and we need to make sure the underlying map
         // works as expected
-        assert(copiedMap._map.size === 0);
+        assert(copiedMap._map.size === 0, "Data map size is 0");
         // @ts-ignore - this is a test, and we need to make sure the underlying encoding map
         // works as expected
-        assert(copiedMap._converterInfo.size === 0);
+        assert(copiedMap._converterInfo.size === 0, "Converter map size is 0");
     })
     it ("Deleting entry from map removes object", () => {
         const copiedMap = copyArrayStringMap(arrayStringMap);
         copiedMap.delete(sampleArray1);
-        assert(copiedMap.size === 0);
-        assert(copiedMap.get(sampleArray1) === undefined);
-        assert(!copiedMap.has(sampleArray1));
-        assert([...copiedMap.entries()].length === 0);
+        assert(copiedMap.size === 0, "Map size is 0");
+        assert(copiedMap.get(sampleArray1) === undefined, "Map get returns undefined");
+        assert(!copiedMap.has(sampleArray1), "Map has returns false");
+        assert([...copiedMap.entries()].length === 0, "Map entries returns empty array");
         // @ts-ignore - this is a test, and we need to make sure the underlying map
         // works as expected
-        assert(copiedMap._map.size === 0);
+        assert(copiedMap._map.size === 0, "Data map size is 0");
         // @ts-ignore - this is a test, and we need to make sure the underlying encoding map
         // works as expected
-        assert(copiedMap._converterInfo.size === 0);
+        assert(copiedMap._converterInfo.size === 0, "Converter map size is 0");
     })
 })
 
@@ -105,7 +105,7 @@ describe("Map with one object and different separator", () => {
     it("Map uses proper encoding underneath", () => {
         // @ts-ignore - this is a test, and we need to make sure the underlying item
         // works as expected
-        assert([...arrayStringMap._map.keys()][0].includes(":"));
+        assert([...arrayStringMap._map.keys()][0].includes(":"), "Separator is present");
     })
 })
 
@@ -126,17 +126,17 @@ describe("Map with one object and alternate array", () => {
         assert(arrayStringMap.has(sampleArray2));
     })
     it ("Map entries returns array with one object", () => {
-        assert([...arrayStringMap.entries()].length === 1);
-        assert([...arrayStringMap.entries()][0][0] === sampleArray2);
-        assert([...arrayStringMap.entries()][0][1] === sampleValue2);
+        assert([...arrayStringMap.entries()].length === 1, "Array length is 1");
+        assert([...arrayStringMap.entries()][0][0] === sampleArray2, "Array is sampleArray2");
+        assert([...arrayStringMap.entries()][0][1] === sampleValue2, "Value is sampleValue2");
     })
     it ("Map keys returns array with one object", () => {
-        assert([...arrayStringMap.keys()].length === 1);
-        assert([...arrayStringMap.keys()][0] === sampleArray2);
+        assert([...arrayStringMap.keys()].length === 1, "Array length is 1");
+        assert([...arrayStringMap.keys()][0] === sampleArray2, "Array is sampleArray2");
     })
     it ("Map values returns array with one value", () => {
-        assert([...arrayStringMap.values()].length === 1);
-        assert([...arrayStringMap.values()][0] === sampleValue2);
+        assert([...arrayStringMap.values()].length === 1, "Array length is 1");
+        assert([...arrayStringMap.values()][0] === sampleValue2, "Value is sampleValue2");
     })
 })
 
@@ -148,75 +148,77 @@ describe("Map with two objects", () => {
         assert(arrayStringMap.size === 2);
     })
     it ("Map get returns value", () => {
-        assert(arrayStringMap.get(sampleArray1) === sampleValue1);
-        assert(arrayStringMap.get(sampleArray3) === sampleValue2);
+        assert(arrayStringMap.get(sampleArray1) === sampleValue1, "Value is sampleValue1");
+        assert(arrayStringMap.get(sampleArray3) === sampleValue2, "Value is sampleValue2");
     })
     it ("Alternate array with same values returns same value", () => {
-        assert(arrayStringMap.get(sampleArray2) === sampleValue1);
-        assert(arrayStringMap.get(sampleArray3) !== sampleValue1);
+        assert(arrayStringMap.get(sampleArray2) === sampleValue1, "Value is sampleValue1");
+        assert(arrayStringMap.get(sampleArray3) !== sampleValue1, "Value is not sampleValue1");
     })
     it ("Map has returns true", () => {
-        assert(arrayStringMap.has(sampleArray1));
-        assert(arrayStringMap.has(sampleArray2));
+        assert(arrayStringMap.has(sampleArray1), "Has for sampleArray1 returns true");
+        assert(arrayStringMap.has(sampleArray2), "Has for sampleArray2 returns true");
     })
     it ("Map entries returns array with two objects", () => {
-        assert([...arrayStringMap.entries()].length === 2);
-        assert([...arrayStringMap.entries()][0][0] === sampleArray1);
-        assert([...arrayStringMap.entries()][0][1] === sampleValue1);
-        assert([...arrayStringMap.entries()][1][0] === sampleArray3);
-        assert([...arrayStringMap.entries()][1][1] === sampleValue2);
+        assert([...arrayStringMap.entries()].length === 2, "Array length is 2");
+        assert([...arrayStringMap.entries()][0][0] === sampleArray1, "Array is sampleArray1");
+        assert([...arrayStringMap.entries()][0][1] === sampleValue1, "Value is sampleValue1");
+        assert([...arrayStringMap.entries()][1][0] === sampleArray3, "Array is sampleArray3");
+        assert([...arrayStringMap.entries()][1][1] === sampleValue2, "Value is sampleValue2");
     })
     it ("Map keys returns array with two objects", () => {
-        assert([...arrayStringMap.keys()].length === 2);
-        assert([...arrayStringMap.keys()][0] === sampleArray1);
-        assert([...arrayStringMap.keys()][1] === sampleArray3);
+        assert([...arrayStringMap.keys()].length === 2, "Array length is 2");
+        assert([...arrayStringMap.keys()][0] === sampleArray1, "Array is sampleArray1");
+        assert([...arrayStringMap.keys()][1] === sampleArray3, "Array is sampleArray3");
     })
     it ("Map values returns array with two values", () => {
-        assert([...arrayStringMap.values()].length === 1);
-        assert([...arrayStringMap.values()][0] === sampleValue1);
+        assert([...arrayStringMap.values()].length === 1, "Array length is 1");
+        assert([...arrayStringMap.values()][0] === sampleValue1, "Value is sampleValue1");
     })
     it("Map uses proper separator underneath", () => {
         // @ts-ignore - this is a test, and we need to make sure the underlying map
         // works as expected
-        assert([...arrayStringMap._map.keys()][0].includes("\u200b"));
+        assert([...arrayStringMap._map.keys()][0].includes("\u200b"), "Separator is present in item 0");
         // @ts-ignore - this is a test, and we need to make sure the underlying map
         // works as expected
-        assert([...arrayStringMap._map.keys()][1].includes("\u200b"));
+        assert([...arrayStringMap._map.keys()][1].includes("\u200b"), "Separator is present in item 1");
         // @ts-ignore - this is a test, and we need to make sure the underlying encoding map
         // works as expected
-        assert([...arrayStringMap._converterInfo.values()][0] === sampleArray1);
+        assert([...arrayStringMap._converterInfo.values()][0] === sampleArray1, "Converter info is sampleArray1 for item 0");
         // @ts-ignore - this is a test, and we need to make sure the underlying map
         // works as expected
-        assert([...arrayStringMap._converterInfo.values()][1] === sampleArray3);
+        assert([...arrayStringMap._converterInfo.values()][1] === sampleArray3, "Converter info is sampleArray3 for item 1");
     })
     it ("Clearing map removes all objects", () => {
         const copiedMap = copyArrayStringMap(arrayStringMap);
         copiedMap.clear();
-        assert(copiedMap.size === 0);
-        assert(copiedMap.get(sampleArray1) === undefined);
-        assert(!copiedMap.has(sampleArray1));
-        assert([...copiedMap.entries()].length === 0);
+        assert(copiedMap.size === 0, "Map size is 0");
+        assert(copiedMap.get(sampleArray1) === undefined, "Map get returns undefined for sampleArray1");
+        assert(copiedMap.get(sampleArray3) === undefined, "Map get returns undefined for sampleArray3");
+        assert(!copiedMap.has(sampleArray1), "Map has returns false for sampleArray1");
+        assert(!copiedMap.has(sampleArray3), "Map has returns false for sampleArray3");
+        assert([...copiedMap.entries()].length === 0, "Map entries returns empty array");
         // @ts-ignore - this is a test, and we need to make sure the underlying map
         // works as expected
-        assert(copiedMap._map.size === 0);
+        assert(copiedMap._map.size === 0, "Data map size is 0");
         // @ts-ignore - this is a test, and we need to make sure the underlying encoding map
         // works as expected
-        assert(copiedMap._converterInfo.size === 0);
+        assert(copiedMap._converterInfo.size === 0, "Converter map size is 0");
     })
     it ("Deleting entry from map removes object but keeps other object", () => {
         const copiedMap = copyArrayStringMap(arrayStringMap);
         copiedMap.delete(sampleArray1);
-        assert(copiedMap.size === 1);
-        assert(copiedMap.get(sampleArray1) === undefined);
-        assert(copiedMap.get(sampleArray3) === sampleValue2);
-        assert(!copiedMap.has(sampleArray1));
-        assert(copiedMap.has(sampleArray3));
-        assert([...copiedMap.entries()].length === 1);
+        assert(copiedMap.size === 1, "Map size is 1");
+        assert(copiedMap.get(sampleArray1) === undefined, "Map get returns undefined for sampleArray1");
+        assert(copiedMap.get(sampleArray3) === sampleValue2, "Map get returns sampleValue2 for sampleArray3");
+        assert(!copiedMap.has(sampleArray1), "Map has returns false for sampleArray1");
+        assert(copiedMap.has(sampleArray3), "Map has returns true for sampleArray3");
+        assert([...copiedMap.entries()].length === 1, "Map entries returns array with one object");
         // @ts-ignore - this is a test, and we need to make sure the underlying map
         // works as expected
-        assert(copiedMap._map.size === 1);
+        assert(copiedMap._map.size === 1, "Data map size is 1");
         // @ts-ignore - this is a test, and we need to make sure the underlying encoding map
         // works as expected
-        assert(copiedMap._converterInfo.size === 1);
+        assert(copiedMap._converterInfo.size === 1, "Converter map size is 1");
     })
 })
