@@ -250,7 +250,6 @@ describe("Map with two objects", () => {
     it("Map forEach is called twice", () => {
         let count = 0;
         arrayStringMap.forEach((value, key, map) => {
-            count++;
             assert(map === arrayStringMap, "Map is arrayStringMap");
             if (count === 0){
                 assert(key === sampleArray1, "Key is sampleArray1");
@@ -260,6 +259,7 @@ describe("Map with two objects", () => {
                 assert(key === sampleArray3, "Key is sampleArray3");
                 assert(value === sampleValue2, "Value is sampleValue2");
             }
+            count++;
         });
         assert(count === 2, "ForEach is called twice");
     })
