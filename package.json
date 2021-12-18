@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/PythonCoderAS/array-string-map.git"
   },
+  "engines": {
+    "node": ">=8.X.X"
+  },
   "keywords": [
     "array",
     "string",
