@@ -172,8 +172,9 @@ describe("Map with two objects", () => {
         assert([...arrayStringMap.keys()][1] === sampleArray3, "Array is sampleArray3");
     })
     it ("Map values returns array with two values", () => {
-        assert([...arrayStringMap.values()].length === 1, "Array length is 1");
+        assert([...arrayStringMap.values()].length === 2, "Array length is 2");
         assert([...arrayStringMap.values()][0] === sampleValue1, "Value is sampleValue1");
+        assert([...arrayStringMap.values()][1] === sampleValue2, "Value is sampleValue2");
     })
     it("Map uses proper separator underneath", () => {
         // @ts-ignore - this is a test, and we need to make sure the underlying map
