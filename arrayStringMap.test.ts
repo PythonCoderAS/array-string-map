@@ -31,6 +31,11 @@ describe("Empty map", () => {
     it ("Empty map entries returns empty array", () => {
         assert([...arrayStringMap.entries()].length === 0);
     })
+    it ("Empty map forEach", () => {
+        arrayStringMap.forEach(() => {
+            assert(false, "forEach should not be called");
+        });
+    })
 })
 
 describe("Map with one object", () => {
@@ -97,6 +102,16 @@ describe("Map with one object", () => {
         // works as expected
         assert(copiedMap._converterInfo.size === 0, "Converter map size is 0");
     })
+    it ("Map forEach is called once", () => {
+        let count = 0;
+        arrayStringMap.forEach((value, key, map) => {
+            count++;
+            assert(value === sampleValue1, "Value is sampleValue1");
+            assert(key === sampleArray1, "Key is sampleArray1");
+            assert(map === arrayStringMap, "Map is arrayStringMap");
+        });
+        assert(count === 1, "ForEach is called once");
+    })
 })
 
 describe("Map with one object and different separator", () => {
@@ -137,6 +152,16 @@ describe("Map with one object and alternate array", () => {
     it ("Map values returns array with one value", () => {
         assert([...arrayStringMap.values()].length === 1, "Array length is 1");
         assert([...arrayStringMap.values()][0] === sampleValue2, "Value is sampleValue2");
+    })
+    it ("Map forEach is called once", () => {
+        let count = 0;
+        arrayStringMap.forEach((value, key, map) => {
+            count++;
+            assert(value === sampleValue2, "Value is sampleValue2");
+            assert(key === sampleArray2, "Key is sampleArray2");
+            assert(map === arrayStringMap, "Map is arrayStringMap");
+        });
+        assert(count === 1, "ForEach is called once");
     })
 })
 
@@ -221,5 +246,21 @@ describe("Map with two objects", () => {
         // @ts-ignore - this is a test, and we need to make sure the underlying encoding map
         // works as expected
         assert(copiedMap._converterInfo.size === 1, "Converter map size is 1");
+    })
+    it("Map forEach is called twice", () => {
+        let count = 0;
+        arrayStringMap.forEach((value, key, map) => {
+            count++;
+            assert(map === arrayStringMap, "Map is arrayStringMap");
+            if (count === 0){
+                assert(key === sampleArray1, "Key is sampleArray1");
+                assert(value === sampleValue1, "Value is sampleValue1");
+            }
+            else if (count === 1){
+                assert(key === sampleArray3, "Key is sampleArray3");
+                assert(value === sampleValue2, "Value is sampleValue2");
+            }
+        });
+        assert(count === 2, "ForEach is called twice");
     })
 })
