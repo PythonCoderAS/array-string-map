@@ -1,4 +1,10 @@
 # array-string-map
+![node-current](https://img.shields.io/node/v/array-string-map)
+[![npm](https://img.shields.io/npm/v/array-string-map)](https://www.npmjs.com/package/array-string-map)
+[![npm](https://img.shields.io/npm/dt/array-string-map)](https://www.npmjs.com/package/array-string-map)
+[![GitHub issues](https://img.shields.io/github/issues/PythonCoderAS/array-string-map)](https://github.com/PythonCoderAS/array-string-map/issues)
+[![Tests](https://github.com/PythonCoderAS/array-string-map/actions/workflows/test.yml/badge.svg)](https://github.com/PythonCoderAS/array-string-map/actions/workflows/test.yml)
+
 A Map that internally encodes Arrays to strings so that two Arrays with the same elements will return the same item.
 
 ## Motivation
