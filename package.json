@@ -1,8 +1,10 @@
 {
   "name": "array-string-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Map that internally encodes Arrays to strings so that two Arrays with the same elements will return the same item.",
   "type": "module",
+  "main": "arrayStringMap.js",
+  "types": "arrayStringMap.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
