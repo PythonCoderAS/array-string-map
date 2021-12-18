@@ -2,6 +2,7 @@
   "name": "array-string-map",
   "version": "0.0.1",
   "description": "A Map that internally encodes Arrays to strings so that two Arrays with the same elements will return the same item.",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
