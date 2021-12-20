@@ -26,7 +26,7 @@ import ArrayStringMap from 'array-string-map'
 However, for CommonJS modules, you need to use the `require` function, such as:
 
 ```js
-const {default: ArrayStringMap} = require("./arrayStringMap")
+const {default: ArrayStringMap} = require("array-string-map")
 ```
 
 ## API
