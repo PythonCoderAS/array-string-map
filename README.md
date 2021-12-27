@@ -40,7 +40,7 @@ interface. All methods that can be used on a Map are available on the ArrayStrin
 
 The class's constructor. 
 
-**Paramaters**: 
+**Parameters**: 
 
 - `sep`: The seperator that is being used to seperate list items.  By default, this is the zero-width space character, 
   which is unlikely to be used in most trusted strings. However, if the data used can be arbritary strings that are
