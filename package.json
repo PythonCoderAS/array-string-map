@@ -1,6 +1,6 @@
 {
   "name": "array-string-map",
-  "version": "3.0.1",
+  "version": "3.0.0",
   "description": "A Map that internally encodes Arrays to strings so that two Arrays with the same elements will return the same item.",
   "type": "commonjs",
   "main": "arrayStringMap.js",
