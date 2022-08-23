@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/PythonCoderAS/array-string-map#readme",
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.3.0",
     "@types/chai": "^4.3.0",
     "@types/mocha": "^9.0.0",
     "chai": "^4.3.4",
