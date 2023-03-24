@@ -6,7 +6,8 @@
   "main": "arrayStringMap.js",
   "types": "arrayStringMap.d.ts",
   "scripts": {
-    "test": "tsc -p tsconfig.json && mocha arrayStringMap.test.js"
+    "test": "tsc -p tsconfig.json && mocha arrayStringMap.test.js",
+    "make-docs": "typedoc --readme README.md --out docs arrayStringMap.ts"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,8 @@
     "@types/mocha": "^10.0.0",
     "chai": "^4.3.4",
     "mocha": "^10.0.0",
+    "typedoc": "^0.23.28",
+    "typedoc-plugin-rename-defaults": "^0.6.4",
     "typescript": "^5.0.2"
   }
 }
