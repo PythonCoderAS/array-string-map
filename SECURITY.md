@@ -10,4 +10,4 @@
 
 ## Reporting a Vulnerability
 
-Please contact me directly at sarkaraoyan@gmail.com.
+Use GitHub to privately report a vulnurability.
